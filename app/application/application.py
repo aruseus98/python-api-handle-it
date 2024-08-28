@@ -6,11 +6,11 @@ class Application:
         self.auteur = 'vanessa kovalsky'
         self.licence = 'GNU/GPL'
 
-    def add(data):
+    def add(self, data):
         return 'Application ajoutée'
     
-    def get(nom):
+    def get(self, nom):
         return self
     
-    def liste():
+    def liste(self):
         return 'Liste des applications'
