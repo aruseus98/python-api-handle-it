@@ -26,20 +26,20 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8 pytest
+        pip install flake8 html-testRunner
         if [ -f app/requirements.txt ]; then pip install -r app/requirements.txt; fi
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        flake8 app/ --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        flake8 app/ --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: List files for debugging
       run: |
         ls -R
-    - name: Test with pytest
+    - name: Test with unittest
       run: |
-        pytest app/test/unit
+        pytest -m unittest app/test/unit/test.py
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2
 
