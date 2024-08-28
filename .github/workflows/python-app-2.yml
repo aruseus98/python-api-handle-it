@@ -38,8 +38,9 @@ jobs:
       run: |
         ls -R
     - name: Test with pytest
+      working-directory: ./app
       run: |
-        pytest --rootdir=. app/test/unit
+        pytest test
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2
 
