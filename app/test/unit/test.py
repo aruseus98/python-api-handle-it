@@ -3,7 +3,7 @@ import json
 import HtmlTestRunner
 
 from app.application.application import Application
-import machine.machine.Machine as Machine
+from app.machine.machine import Machine
 
 class TestApplication(unittest.TestCase):
     # Initialisation de données pour mes tests
