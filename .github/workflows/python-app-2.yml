@@ -37,9 +37,9 @@ jobs:
     - name: List files for debugging
       run: |
         ls -R
-    - name: Test with unittest
+    - name: Test with pytest
       run: |
-        python -m unittest discover app/test/unit "*.py"
+        pytest app/test/unit
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2
 
