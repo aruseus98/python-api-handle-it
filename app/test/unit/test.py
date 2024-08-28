@@ -2,7 +2,7 @@ import unittest
 import json
 import HtmlTestRunner
 
-import application.application.Application as Application
+from app.application.application import Application
 import machine.machine.Machine as Machine
 
 class TestApplication(unittest.TestCase):
