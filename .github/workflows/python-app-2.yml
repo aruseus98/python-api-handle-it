@@ -52,5 +52,7 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v4
       with:
+        context: docker-app/python
+        file: docker-app/python/Dockerfile  
         push: true
         tags: aruruu/example_docker:latest
